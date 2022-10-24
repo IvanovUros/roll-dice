@@ -44,13 +44,13 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #c8d1db;
-  font-size: 2.5rem;
-  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
 }
 
 form {
@@ -79,6 +79,27 @@ form .input-container {
   display: flex;
   justify-content: center;
 }
+.player .turn-indicator {
+  width: 5rem;
+  height: 5rem;
+  background-color: #56a5eb;
+  position: absolute;
+  border-radius: 20px;
+  top: 2rem;
+  box-shadow: 0 0.4rem 1.4rem 0.5rem rgba(86, 185, 235, 0.5);
+}
+.player #turnIndicatorFirst {
+  right: 10rem;
+}
+.player #turnIndicatorSecond {
+  left: 10rem;
+}
+.player .turn-indicator.true {
+  background-color: green;
+}
+.player .turn-indicator.false {
+  background-color: red;
+}
 .player .dice {
   position: absolute;
   width: 20rem;
@@ -88,6 +109,7 @@ form .input-container {
   background-size: cover;
   background-position: center;
   border-radius: 20%;
+  box-shadow: 0 0.4rem 1.4rem 0.5rem rgba(86, 185, 235, 0.5);
 }
 .player .dice.one {
   background-image: url(/roll-dice/roll-dice/slike/1.png);
@@ -107,10 +129,10 @@ form .input-container {
 .player .dice.six {
   background-image: url(/roll-dice/roll-dice/slike/6.png);
 }
-.player #totalF,
-.player #totalS,
-.player #currentF,
-.player #currentS {
+.player #totalFirst,
+.player #totalSecond,
+.player #currentFirst,
+.player #currentSecond {
   width: 15rem;
   font-size: 2.5rem;
   color: #56a5eb;
@@ -121,8 +143,8 @@ form .input-container {
   display: flex;
   align-items: center;
 }
-.player #currentF,
-.player #currentS {
+.player #currentFirst,
+.player #currentSecond {
   bottom: 20rem;
 }
 

@@ -1,10 +1,15 @@
 const usernameF = document.getElementById('usernameF');
 const submitBtnF = document.getElementById('submitF');
 
-submitBtnF.addEventListener('click', () => {
-    console.log(1)
-    localStorage.setItem('firstPlayerUsername', usernameF.value);
+usernameF.addEventListener('keyup', () => {
+    submitBtnF.disabled = !usernameF.value;
 });
+
+nextPage = e => {
+    localStorage.setItem('firstPlayerUsername', usernameF.value);
+    e.preventDefault();
+    window.location.assign('secondPlayer.html');
+}
 
 
 
